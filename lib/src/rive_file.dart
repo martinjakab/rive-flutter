@@ -388,13 +388,14 @@ Consider calling `await RiveFile.initialize()` before using `RiveFile.import`'''
   /// to ensure the engine has initialized before displaying the first Rive
   /// graphic.
   static Future<void> initialize() async {
-    if (!_initializedText) {
-      final status = await Font.initialize();
-      if (status == FontInitStatus.success ||
-          status == FontInitStatus.alreadyInitialized) {
-        _initializedText = true;
-      }
-    }
+    _initializedText = true;
+    // if (!_initializedText) {
+    //   final status = await Font.initialize();
+    //   if (status == FontInitStatus.success ||
+    //       status == FontInitStatus.alreadyInitialized) {
+    //     _initializedText = true;
+    //   }
+    // }
   }
 
   /// Initialize Rive's text engine if it hasn't been yet.
